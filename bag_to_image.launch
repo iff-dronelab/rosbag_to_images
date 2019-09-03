@@ -4,12 +4,12 @@
     <!-- Arguments -->
 
     <!-- Node -->
-    <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/user/image.bag"/>
+    <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/khedar/Downloads/svo_test_short.bag"/>
     <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="node">
 
-    	<remap from="image" to="/camera/image_color"/>
-    	<param name="image_transport" value="compressed"/>
-    	<param name="filename_format" value="/home/user/images/color%03i.jpg"/>
+    	<remap from="image" to="/camera/image_raw"/>
+<!--     	<param name="image_transport" value="compressed"/>
+ -->    	<param name="filename_format" value="/home/khedar/images/color%03i.jpg"/>
     </node>
 
 </launch>
